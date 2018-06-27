@@ -27,6 +27,7 @@ $(document).ready(function() {
     'y',
     'z'
   ];
+
   var randLetter =
     randLetterArray[Math.floor(Math.random() * randLetterArray.length)];
   console.log(randLetter);
@@ -40,6 +41,10 @@ $(document).ready(function() {
       alert('You won!');
       $('#wins').html(wins++);
       $('#guessesLeft').html('9');
+      $('#guesses').html('');
+      randLetter =
+        randLetterArray[Math.floor(Math.random() * randLetterArray.length)];
+      console.log(randLetter);
     } else {
       wrongGuesses--;
       $('#guessesLeft').html(wrongGuesses);
@@ -49,11 +54,11 @@ $(document).ready(function() {
         alert('You lost!');
         wrongGuesses = 9;
         $('#guessesLeft').html('9');
+        $('#guesses').html('');
+        randLetter =
+          randLetterArray[Math.floor(Math.random() * randLetterArray.length)];
+        console.log(randLetter);
       }
     }
   };
-  $('#reset').onclick(function(event) {
-    var randLetter =
-      randLetterArray[Math.floor(Math.random() * randLetterArray.length)];
-  });
 });
