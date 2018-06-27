@@ -38,7 +38,7 @@ $(document).ready(function() {
   document.onkeyup = function(event) {
     var letterGuess = event.key.toLowerCase();
     if (letterGuess == randLetter) {
-      alert('You won!');
+      alert('You won! The letter was: ' + randLetter);
       $('#wins').html(wins++);
       $('#guessesLeft').html('9');
       $('#guesses').html('');
@@ -51,7 +51,7 @@ $(document).ready(function() {
       $('#guesses').prepend(letterGuess);
       if (wrongGuesses === 0) {
         $('#losses').html(losses++);
-        alert('You lost!');
+        alert('You lost! The letter was: ' + randLetter);
         wrongGuesses = 9;
         $('#guessesLeft').html('9');
         $('#guesses').html('');
