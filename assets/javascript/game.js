@@ -45,10 +45,16 @@ $(document).ready(function() {
       randLetter =
         randLetterArray[Math.floor(Math.random() * randLetterArray.length)];
       console.log(randLetter);
-    } else {
+    }
+
+    // event.which !== 0 &&
+    // !event.ctrlKey &&
+    // !event.metaKey &&
+    // !event.altKey
+    else if (jQuery.inArray(letterGuess, randLetterArray) !== -1) {
       wrongGuesses--;
       $('#guessesLeft').html(wrongGuesses);
-      $('#guesses').prepend(letterGuess);
+      $('#guesses').prepend(' ' + letterGuess + ' ' + '|');
       if (wrongGuesses === 0) {
         $('#losses').html(losses++);
         alert('You lost! The letter was: ' + randLetter);
